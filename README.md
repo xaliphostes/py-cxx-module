@@ -1,4 +1,4 @@
-# Creating a python module from C++ classes
+# Creating a python module from C++ classes using scikit-build-core and cmake
 
 ## Install the necessary tools
 ```sh
