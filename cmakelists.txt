@@ -1,0 +1,14 @@
+cmake_minimum_required(VERSION 3.16)
+project(mon_projet)
+
+include(FetchContent)
+FetchContent_Declare(
+  pybind11
+  GIT_REPOSITORY https://github.com/pybind/pybind11.git
+  GIT_TAG        v2.10.0
+)
+FetchContent_MakeAvailable(pybind11)
+
+pybind11_add_module(mon_module src/mon_module/mon_module.cxx)
+
+install(TARGETS mon_module DESTINATION .)

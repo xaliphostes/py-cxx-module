@@ -1,0 +1,23 @@
+[build-system]
+requires = ["scikit-build-core", "pybind11"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "mon_projet"
+version = "0.1.0"
+
+[tool.scikit-build]
+cmake.minimum-version = "3.16"
+cmake.args = ["-DCMAKE_PREFIX_PATH={pythonLocation}"]
+sdist.include = ["src/mon_module/*.cxx", "src/mon_module/*.h"]
+wheel.packages = ["src/mon_module"]
+
+#[tool.scikit-build.cmake.define]
+#PYBIND11_PYTHON_VERSION = "3"
+
+#[tool.scikit-build.dependencies]
+#pybind11 = "^2.10.0"
+
+#[tool.cibuildwheel]
+#archs = ["auto64"]
+#skip = ["*-musllinux_*", "pp*", "cp36-*", "cp37-*"]
